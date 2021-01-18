@@ -1,0 +1,161 @@
+Checking if remote manifest is accessible...
+Getting manifests from remote server...
+
+Found environment variable CyRemoteManifestOverride=http://git-ore.aus.cypress.com/repo-staging/mtb-super-manifest/raw/release-v2.9.0-rc4/mtb-super-manifest-fv2.xml
+Processing super-manifest http://git-ore.aus.cypress.com/repo-staging/mtb-super-manifest/raw/release-v2.9.0-rc4/mtb-super-manifest-fv2.xml...
+ - Found unknown item CYPM1322-97BZXIT commit latest-v1.X, release-v1.0.0 in the dependency manifest data.
+ - Found unknown item sensor-motion-bme680 commit latest-v1.X, release-v1.0.0 in the dependency manifest data.
+Successfully acquired the information.
+
+Summary: 
+
+BSP: CY8CKIT-062S2-43012
+Template Application(s): Hello World
+Application(s) Root Path: C:/Users/kris/Desktop/Modus_workspace/MachineLearning
+
+Press "Create" to create the selected application(s).
+
+
+Project creation command to be executed:
+C:/Users/kris/ModusToolbox/tools_2.2/project-creator/project-creator-cli.exe --board-id CY8CKIT-062S2-43012 --board-uri http://git-ore.aus.cypress.com/repo-staging/TARGET_CY8CKIT-062S2-43012 --board-commit latest-v2.X --app-id mtb-example-psoc6-hello-world --app-uri http://git-ore.aus.cypress.com/repo-staging/mtb-example-psoc6-hello-world --app-commit latest-v2.X --user-app-name Micro_Speech --target-dir C:/Users/kris/Desktop/Modus_workspace/MachineLearning --output-for-machine --use-modus-shell
+
+
+Getting manifest...
+
+
+==============================================================================
+= Cloning 'mtb-example-psoc6-hello-world' =
+==============================================================================
+Cloning http://git-ore.aus.cypress.com/repo-staging/mtb-example-psoc6-hello-world into C:/Users/kris/Desktop/Modus_workspace/MachineLearning directory...
+env git clone --progress --origin cypress http://git-ore.aus.cypress.com/repo-staging/mtb-example-psoc6-hello-world Micro_Speech
+
+Cloning into 'Micro_Speech'...
+
+warning: redirecting to http://git-ore.aus.cypress.com/repo-staging/mtb-example-psoc6-hello-world.git/
+remote: Enumerating objects: 147, done.        
+
+remote: Counting objects: 100% (147/147), done.        
+remote: Compressing objects: 100% (88/88), done.        
+
+remote: Total 147 (delta 71), reused 123 (delta 55), pack-reused 0        
+
+Receiving objects: 100% (147/147), 1.08 MiB | 533.00 KiB/s, done.
+
+Resolving deltas: 100% (71/71), done.
+
+
+Checking out latest-v2.X...
+env git checkout --progress latest-v2.X
+
+Note: checking out 'latest-v2.X'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 25d7970 CE Build: 2.1.0.784, SHA: 2024b2fe
+
+
+==============================================================================
+= Creating 'TARGET_CY8CKIT-062S2-43012.mtb' file(s) =
+==============================================================================
+
+
+==============================================================================
+= Updating Makefile for 'Micro_Speech' =
+==============================================================================
+
+
+==============================================================================
+= Getting Dependencies for 'Micro_Speech' =
+==============================================================================
+
+make getlibs CY_TOOLS_PATHS=C:/Users/kris/ModusToolbox/tools_2.2
+
+Tools Directory: C:/Users/kris/ModusToolbox/tools_2.2
+
+
+==============================================================================
+= Importing libraries =
+==============================================================================
+
+Git is git version 2.17.0, found at /usr/bin/git
+
+
+Resolving dependencies...
+
+Dependencies resolved.
+
+Searching application directory (.mtb)...
+
+Found 9 .mtb file(s)
+
+    Processing file "C:/Users/kris/Desktop/Modus_workspace/MachineLearning/Micro_Speech/deps/TARGET_CY8CKIT-062S2-43012.mtb"
+
+warning: redirecting to http://git-ore.aus.cypress.com/repo-staging/TARGET_CY8CKIT-062S2-43012.git/
+
+WARNING: Uncommitted/Untracked files detected in "../mtb_shared/TARGET_CY8CKIT-062S2-43012/latest-v2.X".
+
+        Save your work in source control before updating this library.
+        Skipping current reference...
+
+    Processing file "C:/Users/kris/Desktop/Modus_workspace/MachineLearning/Micro_Speech/deps/retarget-io.mtb"
+
+warning: redirecting to http://git-ore.aus.cypress.com/repo-staging/retarget-io.git/
+
+    Processing file "C:/Users/kris/Desktop/Modus_workspace/MachineLearning/Micro_Speech/libs/capsense.mtb"
+
+warning: redirecting to http://git-ore.aus.cypress.com/repo-staging/capsense.git/
+
+    Processing file "C:/Users/kris/Desktop/Modus_workspace/MachineLearning/Micro_Speech/libs/core-lib.mtb"
+
+warning: redirecting to http://git-ore.aus.cypress.com/repo-staging/core-lib.git/
+
+    Processing file "C:/Users/kris/Desktop/Modus_workspace/MachineLearning/Micro_Speech/libs/core-make.mtb"
+
+warning: redirecting to http://git-ore.aus.cypress.com/repo-staging/core-make.git/
+
+    Processing file "C:/Users/kris/Desktop/Modus_workspace/MachineLearning/Micro_Speech/libs/mtb-hal-cat1.mtb"
+
+warning: redirecting to http://git-ore.aus.cypress.com/repo-staging/mtb-hal-cat1.git/
+
+    Processing file "C:/Users/kris/Desktop/Modus_workspace/MachineLearning/Micro_Speech/libs/mtb-pdl-cat1.mtb"
+
+warning: 
+redirecting to http://git-ore.aus.cypress.com/repo-staging/mtb-pdl-cat1.git/
+
+    Processing file "C:/Users/kris/Desktop/Modus_workspace/MachineLearning/Micro_Speech/libs/psoc6cm0p.mtb"
+
+warning: redirecting to http://git-ore.aus.cypress.com/repo-staging/psoc6cm0p.git/
+
+    Processing file "C:/Users/kris/Desktop/Modus_workspace/MachineLearning/Micro_Speech/libs/recipe-make-cat1a.mtb"
+
+warning: 
+redirecting to http://git-ore.aus.cypress.com/repo-staging/recipe-make-cat1a.git/
+
+Libraries processed.
+
+Created file "C:/Users/kris/Desktop/Modus_workspace/MachineLearning/Micro_Speech/libs/mtb.mk".
+
+
+
+==============================================================================
+WARNING: Uncommitted/Untracked files detected in "../mtb_shared/TARGET_CY8CKIT-062S2-43012/latest-v2.X".
+        Save your work in source control before updating this library.
+        Skipping current reference...
+
+
+==============================================================================
+= Import complete =
+==============================================================================
+
+
+
+
+Successfully created "Micro_Speech" application.
+
