@@ -72,7 +72,7 @@ namespace {
 #define PDM_DATA                    P10_5
 #define PDM_CLK                     P10_4
 
-#define AUDIO_CAPTURE_DEBUG			1
+#define AUDIO_CAPTURE_DEBUG			0
 #define AUDIO_LOOPBACK				0 /* BEFORE YOU ENABLE THIS, ROUTE retarget_io in main.cpp to different IO */
 
 #if AUDIO_LOOPBACK

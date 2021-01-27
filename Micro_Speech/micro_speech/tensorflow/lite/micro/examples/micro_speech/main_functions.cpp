@@ -26,6 +26,18 @@ limitations under the License.
 #include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
 #include "tensorflow/lite/schema/schema_generated.h"
 
+#define ENABLE_RUN_PROFILE	0
+
+#if ENABLE_RUN_PROFILE
+#include "cyhal.h"
+#include "cybsp.h"
+#include "stdio.h"
+
+extern unsigned int read_tick(void);
+bool profile = true;
+uint8_t profileRunCount = 0;
+#endif
+
 // Globals, used for compatibility with Arduino-style sketches.
 namespace {
 tflite::ErrorReporter* error_reporter = nullptr;
@@ -146,12 +158,31 @@ void loop() {
     model_input_buffer[i] = feature_buffer[i];
   }
 
+#if ENABLE_RUN_PROFILE
+  if(profile)
+  {
+	  printf("Time before model run = %ld\r\n", read_tick()/(Cy_SysClk_ClkFastGetFrequency()/1000));
+  }
+#endif
   // Run the model on the spectrogram input and make sure it succeeds.
   TfLiteStatus invoke_status = interpreter->Invoke();
   if (invoke_status != kTfLiteOk) {
     TF_LITE_REPORT_ERROR(error_reporter, "Invoke failed");
     return;
   }
+
+#if ENABLE_RUN_PROFILE
+  if(profile)
+  {
+	  printf("Time after model run = %ld\r\n", read_tick()/(Cy_SysClk_ClkFastGetFrequency()/1000));
+	  profileRunCount++;
+
+	  if(profileRunCount > 10)
+	  {
+		  profile = false;
+	  }
+  }
+#endif
 
   // Obtain a pointer to the output tensor
   TfLiteTensor* output = interpreter->output(0);

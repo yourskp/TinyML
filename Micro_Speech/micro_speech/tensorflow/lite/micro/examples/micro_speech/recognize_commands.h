@@ -132,9 +132,9 @@ class RecognizeCommands {
   // help reduce spurious recognitions.
   explicit RecognizeCommands(tflite::ErrorReporter* error_reporter,
                              int32_t average_window_duration_ms = 1000,
-                             uint8_t detection_threshold = 200,
+                             uint8_t detection_threshold = 170,
                              int32_t suppression_ms = 1500,
-                             int32_t minimum_count = 3);
+                             int32_t minimum_count = 2);
 
   // Call this with the results of running a model on sample data.
   TfLiteStatus ProcessLatestResults(const TfLiteTensor* latest_results,
